@@ -10,14 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@3
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
+    goals: 'test'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
+    sonarQubeRunAnalysis: false
